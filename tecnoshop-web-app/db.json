@@ -1,0 +1,124 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "name": "Disco Duro HHD",
+      "trademark": "Toshiba",
+      "model": "L200 de 2,5 in.",
+      "reference": "Capacidad de 1 TB; Tamaño de 2.5 pulgadas; Buffer de 8 MB; RPM de 5,400 rpm; Conexión SATA III (6,0 Gb / s); Dimensiones de 100 (L) x 69.85 (W) x 9.5 (H) mm; Peso de 117 gramos; Contenido de L200 Mobile Hard Drive internal 1TB HDD, Quick Start Guide.",
+      "price": "57000009",
+      "image": "https://mundotecnologicodecolombia.com/wp-content/uploads/2018/06/dd-1tb-portatil-2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mouse Gamer",
+      "trademark": "Wesdar",
+      "model": "GM2",
+      "reference": "Sistema de seguimiento óptico; Sensor INSTANT 704; Resolución: 1000 1600 2400 32000 DPI; Puerto USB2.0; Longitud del cable: 1,50 cm; Tensión de funcionamiento Voltaje / corriente nominal: DC 5V / 100mAh; Botón Clic Vida: 10Million Cycles; Vida útil del botón de desplazamiento: 300 mil ciclos; Tamaño del artículo: 13 * 7 * 3,5cm; Tipo de artículo: izquierda, derecha, desplazamiento whel, DPI, fuego, avance, retroceso; Luces LED de colores,  SENSOR PRO-AIM.",
+      "price": "5000000",
+      "image": "https://puntotecnologico.co/wp-content/uploads/2021/10/MOUSE-USB-GAMER-UNITEC-GM2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Teclado Gamer",
+      "trademark": "Jaltech",
+      "model": "GT400T",
+      "reference": "Retroiluminado con Luz LED RGB; Cable USB de alta calidad con filtro; 105 Teclas, 12 de ellas; con acceso rápido a multimedia; Teclas tipo tapa; Opción de cambio de luces.",
+      "price": 4200000,
+      "image": "https://puntotecnologico.co/wp-content/uploads/2022/02/teclado-usb-gamer-tech-gt400t.jpg"
+    },
+    {
+      "name": "Monitor",
+      "trademark": "LG",
+      "model": "29WQ600-W",
+      "reference": "Pantalla IPS UltraWide™ Full HD (2560 x 1080) de 29 pulgadas; Gama de colores sRGB 99 %/HDR 10; Conectividad USB Tipo-C™; AMD FreeSync / 1ms MBR / Refresh Rate 100Hz; 2 x 7W Stereo Speaker with Waves MaxxAudio®;Diseño prácticamente sin bordes en 3 lados.",
+      "price": "5000",
+      "image": "https://i.linio.com/p/a93dfa57d130226f5af82af3d836c2ba-product.webp",
+      "id": 4
+    },
+    {
+      "name": "Memoria RAM",
+      "trademark": "CRUCIAL",
+      "model": "CT8GS2666",
+      "reference": "DDR4 SO-DIMM; Frecuencia 2666MHz; Latencia CAS 19; Capacidad 8Gb (1x8Gb); Ancho de banda de transferencia de datos 21,300 MB/s (PC4 21300); Voltaje 1,2V; Dimensiones 30 (alto) x 70 (largo) mm.",
+      "price": "8500000",
+      "image": "https://i.linio.com/p/f280cd6ed3936ac895fd2a8dc0842527-product.webp",
+      "id": 6
+    },
+    {
+      "name": "Power Group",
+      "trademark": "SUZUKI",
+      "model": "CLON GAMER 2",
+      "reference": "Amd, Fuente ATX Generica, RYZEN 5, 3.7Ghz, Socket 4650G, Mother Board Asus PRIME A320M-K, Memoria 8 Gb, Disco Duro SSD 512 GB, No Software",
+      "price": "450000",
+      "image": "https://www.compulago.net/wp-content/uploads/erp/productos/2302336461/1656515357274.jpg",
+      "id": 7
+    },
+    {
+      "name": "Diadema con Micrófono",
+      "trademark": "YAMAHA",
+      "model": "G2000",
+      "reference": "Tamaño de bocina 50mm, Impedancia 32ohms, Sensibilidad: 108+-36db, Rango de frecuencia 20hz-20khz, Micrófono 6.0*5.0mm, Sensibilidad de micrófono -38+-3db, -Impedancia de micrófono 2.2k ohms, Largo del cable 2.1m, Voltaje de trabajo de led dc5v, Conectores de audio y micrófono de 3.5mm con control de volumen.",
+      "price": "350000",
+      "image": "https://i.linio.com/p/d9063941c9d17a11a1ce2f6e61cc3711-product.webp",
+      "id": 8
+    }
+  ],
+  "items": [
+    {
+      "id": 2,
+      "name": "Mouse Gamer",
+      "trademark": "Wesdar",
+      "model": "GM2",
+      "price": "5000000",
+      "image": "https://puntotecnologico.co/wp-content/uploads/2021/10/MOUSE-USB-GAMER-UNITEC-GM2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Disco Duro HHD",
+      "trademark": "Toshiba",
+      "model": "L200 de 2,5 in.",
+      "reference": "Capacidad de 1 TB; Tamaño de 2.5 pulgadas; Buffer de 8 MB; RPM de 5,400 rpm; Conexión SATA III (6,0 Gb / s); Dimensiones de 100 (L) x 69.85 (W) x 9.5 (H) mm; Peso de 117 gramos; Contenido de L200 Mobile Hard Drive internal 1TB HDD, Quick Start Guide.",
+      "price": "57000009",
+      "image": "https://mundotecnologicodecolombia.com/wp-content/uploads/2018/06/dd-1tb-portatil-2.jpg"
+    },
+    {
+      "name": "Power Group",
+      "trademark": "SUZUKI",
+      "model": "CLON GAMER 2",
+      "reference": "Amd, Fuente ATX Generica, RYZEN 5, 3.7Ghz, Socket 4650G, Mother Board Asus PRIME A320M-K, Memoria 8 Gb, Disco Duro SSD 512 GB, No Software",
+      "price": "450000",
+      "image": "https://www.compulago.net/wp-content/uploads/erp/productos/2302336461/1656515357274.jpg",
+      "id": 7
+    },
+    {
+      "name": "Memoria RAM",
+      "trademark": "CRUCIAL",
+      "model": "CT8GS2666",
+      "reference": "DDR4 SO-DIMM; Frecuencia 2666MHz; Latencia CAS 19; Capacidad 8Gb (1x8Gb); Ancho de banda de transferencia de datos 21,300 MB/s (PC4 21300); Voltaje 1,2V; Dimensiones 30 (alto) x 70 (largo) mm.",
+      "price": "8500000",
+      "image": "https://i.linio.com/p/f280cd6ed3936ac895fd2a8dc0842527-product.webp",
+      "id": 6
+    }
+  ],
+  "ventas": [
+    {
+      "date": "10/10/2022",
+      "IdVenta": "0001",
+      "price": 100000,
+      "amount": 1
+    },
+    {
+      "date": "20/10/2022",
+      "IdVenta": "0002",
+      "price": 200000,
+      "amount": 1
+    },
+    {
+      "date": "11/10/2022",
+      "IdVenta": "0003",
+      "price": 50000,
+      "amount": 1
+    }
+  ]
+}
