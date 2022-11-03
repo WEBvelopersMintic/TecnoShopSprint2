@@ -16,7 +16,7 @@ const ClientListProducts = () => {
     const [list, setList] = useState([]);
     const [updateList, setUpdateList] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const [dataModal, setDataModal] = useState({ name: "", model: "", trademark: "",  price: "", image: ""})
+    const [dataModal, setDataModal] = useState({ name: "", model: "", trademark: "",  price: "", image: "", cont: ""})
 
     const handleCloseModal = () => { setShowModal(false) }
     const handleOpenModal = () => { setShowModal(true) }
@@ -121,6 +121,17 @@ const ClientListProducts = () => {
                                 onChange={handleChangeModal}
                                 required
                                 disabled
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Cantidad</Form.Label>
+                            <Form.Control
+                                type="number"
+                                name="cont"
+                                placeholder="Cantidad"
+                                value={dataModal.cont}
+                                onChange={handleChangeModal}
+                                required
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">

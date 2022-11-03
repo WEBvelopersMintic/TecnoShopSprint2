@@ -3,3 +3,8 @@
     height: 300px;
     object-fit: cover;
 }
+
+.total-carrito {
+    text-align: right;
+    font-weight: bold;
+}

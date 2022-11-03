@@ -4,8 +4,8 @@ import NavBar from './components/NavBar';
 import NewProduct from './components/NewProduct';
 import ClientListProducts from './components/ClientListProducts';
 import ListProducts from './components/ListProducts';
-
-
+import Carrito from './components/Carrito';
+import ListaVentas from './components/ListaVentas';
 
 const App = () => {
     return (
@@ -18,6 +18,8 @@ const App = () => {
                     <Route exact path="/product" element={<ListProducts/>} />
                     <Route exact path="/create-product" element={<NewProduct/>} />                    
                     <Route exact path="/" element={<ClientListProducts/>} />
+                    <Route exact path="/carrito" element={<Carrito/>} />
+                    <Route exact path="/lista-ventas" element={<ListaVentas/>} />
                     
                 </Routes>
             </div>

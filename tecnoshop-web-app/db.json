@@ -71,16 +71,8 @@
       "trademark": "Wesdar",
       "model": "GM2",
       "price": "5000000",
-      "image": "https://puntotecnologico.co/wp-content/uploads/2021/10/MOUSE-USB-GAMER-UNITEC-GM2.jpg"
-    },
-    {
-      "id": 1,
-      "name": "Disco Duro HHD",
-      "trademark": "Toshiba",
-      "model": "L200 de 2,5 in.",
-      "reference": "Capacidad de 1 TB; Tamaño de 2.5 pulgadas; Buffer de 8 MB; RPM de 5,400 rpm; Conexión SATA III (6,0 Gb / s); Dimensiones de 100 (L) x 69.85 (W) x 9.5 (H) mm; Peso de 117 gramos; Contenido de L200 Mobile Hard Drive internal 1TB HDD, Quick Start Guide.",
-      "price": "57000009",
-      "image": "https://mundotecnologicodecolombia.com/wp-content/uploads/2018/06/dd-1tb-portatil-2.jpg"
+      "image": "https://puntotecnologico.co/wp-content/uploads/2021/10/MOUSE-USB-GAMER-UNITEC-GM2.jpg",
+      "cont": "3"
     },
     {
       "name": "Power Group",
@@ -89,7 +81,8 @@
       "reference": "Amd, Fuente ATX Generica, RYZEN 5, 3.7Ghz, Socket 4650G, Mother Board Asus PRIME A320M-K, Memoria 8 Gb, Disco Duro SSD 512 GB, No Software",
       "price": "450000",
       "image": "https://www.compulago.net/wp-content/uploads/erp/productos/2302336461/1656515357274.jpg",
-      "id": 7
+      "id": 7,
+      "cont": "2"
     },
     {
       "name": "Memoria RAM",
@@ -98,27 +91,50 @@
       "reference": "DDR4 SO-DIMM; Frecuencia 2666MHz; Latencia CAS 19; Capacidad 8Gb (1x8Gb); Ancho de banda de transferencia de datos 21,300 MB/s (PC4 21300); Voltaje 1,2V; Dimensiones 30 (alto) x 70 (largo) mm.",
       "price": "8500000",
       "image": "https://i.linio.com/p/f280cd6ed3936ac895fd2a8dc0842527-product.webp",
-      "id": 6
+      "id": 6,
+      "cont": "1"
+    },
+    {
+      "id": 1,
+      "name": "Disco Duro HHD",
+      "trademark": "Toshiba",
+      "model": "L200 de 2,5 in.",
+      "reference": "Capacidad de 1 TB; Tamaño de 2.5 pulgadas; Buffer de 8 MB; RPM de 5,400 rpm; Conexión SATA III (6,0 Gb / s); Dimensiones de 100 (L) x 69.85 (W) x 9.5 (H) mm; Peso de 117 gramos; Contenido de L200 Mobile Hard Drive internal 1TB HDD, Quick Start Guide.",
+      "price": "57000009",
+      "image": "https://mundotecnologicodecolombia.com/wp-content/uploads/2018/06/dd-1tb-portatil-2.jpg",
+      "cont": "3"
     }
   ],
   "ventas": [
     {
       "date": "10/10/2022",
-      "IdVenta": "0001",
-      "price": 100000,
-      "amount": 1
+      "id": 1,
+      "total": 100000
     },
     {
       "date": "20/10/2022",
-      "IdVenta": "0002",
-      "price": 200000,
-      "amount": 1
+      "id": 2,
+      "total": 200000
     },
     {
       "date": "11/10/2022",
-      "IdVenta": "0003",
-      "price": 50000,
-      "amount": 1
+      "id": 3,
+      "total": 50000
+    },
+    {
+      "date": "3/11/2022",
+      "total": 70950009,
+      "id": 4
+    },
+    {
+      "date": "3/11/2022",
+      "total": 70950009,
+      "id": 5
+    },
+    {
+      "date": "3/11/2022",
+      "total": 70950009,
+      "id": 6
     }
   ]
 }
