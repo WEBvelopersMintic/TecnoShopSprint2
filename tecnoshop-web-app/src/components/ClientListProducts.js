@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../actions/productActions';
 import ClientCardProducts from './ClientCardProducts';
 import { Container, Form, Modal, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 const ClientListProducts = () => {
 
-    const URLP = "http://localhost:3004/productos"
+    const dispatch = useDispatch();
+    const { loading, products, error, productsCount } = useSelector(state => state.products);
+    console.log("products aaaaaa--->", products);
+
+    const URL = "http://localhost:4000/api/productos"
 
     const getData = async () => {
-        const response = axios.get(URLP);
+        const response = axios.get(URL);
         return response;
     }
 
@@ -28,7 +34,7 @@ const ClientListProducts = () => {
         })
     }
 
-    const URLI = "http://localhost:3004/items"
+    const URLI = "http://localhost:3000/items"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -51,23 +57,25 @@ const ClientListProducts = () => {
     }
 
     useEffect(() => {
-        //UseEffect' Body
-        getData().then((response) => {
-            setList(response.data);
-        })
-    }, [updateList])
+        if (error) {
+            return alert.error(error)
+        }
+
+        dispatch(getProducts());
+    }, [dispatch, error])
 
 
     return (
         <Container className="mb-5">
 
             <h1 className="text-center">Productos</h1>
+            {loading ? "cargando..." : (
             <Row>
                 {
-                    list.map((producto, index) => (
+                    products.map((product, index) => (
                         <ClientCardProducts
                             key={index}
-                            producto={producto}
+                            producto={product}
                             setUpdateList={setUpdateList}
                             updateList={updateList}
                             handleCloseModal={handleCloseModal}
@@ -77,6 +85,7 @@ const ClientListProducts = () => {
                     ))
                 }
             </Row>
+            )}
 
             <Modal show={showModal} onHide={handleCloseModal}>
                 <Modal.Header>

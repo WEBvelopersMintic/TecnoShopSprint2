@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 
 const ListaVentas = () =>{
-    const URL = "http://localhost:3004/ventas";
+    const URL = "http://localhost:3000/ventas";
     const [listVentas, setListVentas] = useState([]);
     const [total, setTotal] = useState(0);
 

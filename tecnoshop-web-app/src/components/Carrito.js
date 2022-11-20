@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const Carrito = () =>{
     let navigate = useNavigate();
-    const URL = "http://localhost:3004/items";
+    const URL = "http://localhost:3000/items";
     const [listItems, setListItems] = useState([]);
     const [total, setTotal] = useState(0);
     
@@ -19,7 +19,7 @@ const Carrito = () =>{
         return response;
     }
 
-    const URLI = "http://localhost:3004/ventas"
+    const URLI = "http://localhost:3000/ventas"
 
     const finalizarCompra = async (e) => {
         e.preventDefault();

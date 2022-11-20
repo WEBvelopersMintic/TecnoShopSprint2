@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Disco Duro HHD",
-      "trademark": "Toshiba",
+      "trademark": "Toshiba XXX",
       "model": "L200 de 2,5 in.",
       "reference": "Capacidad de 1 TB; Tamaño de 2.5 pulgadas; Buffer de 8 MB; RPM de 5,400 rpm; Conexión SATA III (6,0 Gb / s); Dimensiones de 100 (L) x 69.85 (W) x 9.5 (H) mm; Peso de 117 gramos; Contenido de L200 Mobile Hard Drive internal 1TB HDD, Quick Start Guide.",
       "price": "57000009",
@@ -103,6 +103,16 @@
       "price": "57000009",
       "image": "https://mundotecnologicodecolombia.com/wp-content/uploads/2018/06/dd-1tb-portatil-2.jpg",
       "cont": "3"
+    },
+    {
+      "name": "Diadema con Micrófono",
+      "trademark": "YAMAHA",
+      "model": "G2000",
+      "reference": "Tamaño de bocina 50mm, Impedancia 32ohms, Sensibilidad: 108+-36db, Rango de frecuencia 20hz-20khz, Micrófono 6.0*5.0mm, Sensibilidad de micrófono -38+-3db, -Impedancia de micrófono 2.2k ohms, Largo del cable 2.1m, Voltaje de trabajo de led dc5v, Conectores de audio y micrófono de 3.5mm con control de volumen.",
+      "price": "350000",
+      "image": "https://i.linio.com/p/d9063941c9d17a11a1ce2f6e61cc3711-product.webp",
+      "id": 8,
+      "cont": "2"
     }
   ],
   "ventas": [
@@ -123,18 +133,8 @@
     },
     {
       "date": "3/11/2022",
-      "total": 70950009,
+      "total": 71300009,
       "id": 4
-    },
-    {
-      "date": "3/11/2022",
-      "total": 70950009,
-      "id": 5
-    },
-    {
-      "date": "3/11/2022",
-      "total": 70950009,
-      "id": 6
     }
   ]
 }

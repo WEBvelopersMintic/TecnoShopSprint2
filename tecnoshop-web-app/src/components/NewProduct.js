@@ -16,7 +16,7 @@ const NewProduct = () => {
         })
     }
 
-    const URL = "http://localhost:3004/productos"
+    const URL = "http://localhost:3000/productos"
 
     const handleSubmit = async (e) => {
         e.preventDefault();

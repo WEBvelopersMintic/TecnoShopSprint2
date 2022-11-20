@@ -18,10 +18,9 @@ const ClientCardProducts = ({producto, setUpdateList, updateList, handleCloseMod
                 <img src={producto.image} alt={producto.name} className="card-img-top image-card" />
                 <Card.Body>
                     <ListGroup className="mb-2">
-                    <ListGroupItem><strong>MARCA: </strong>{producto.trademark}</ListGroupItem>                        
-                        <ListGroupItem><strong>MODELO: </strong>{producto.model}</ListGroupItem>
-                        <ListGroupItem><strong>CARASTERISTICAS: </strong>{producto.reference}</ListGroupItem>
-                        <ListGroupItem><strong>PRECIO: </strong>{producto.price}</ListGroupItem>
+                    <ListGroupItem><strong>NOMBRE: </strong>{producto.nombre}</ListGroupItem>                        
+                        <ListGroupItem><strong>DESCRIPCIÓN: </strong>{producto.descripcion}</ListGroupItem>
+                        <ListGroupItem><strong>PRECIO: </strong>{producto.precio}</ListGroupItem>
                         
                         <button className="btn btn-success me-4" onClick={handleAdd}>Agregar</button>
                         

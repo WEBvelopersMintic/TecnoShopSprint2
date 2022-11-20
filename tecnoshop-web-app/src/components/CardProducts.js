@@ -6,7 +6,9 @@ import './styles/styles.css'
 
 const CardProducts = ({producto, setUpdateList, updateList, handleCloseModal, handleOpenModal, setDataModal}) => {
 
-    const URL = "http://localhost:3004/productos"
+    console.log("producto bbbbb--->", producto)
+
+    const URL = "http://localhost:3000/productos"
 
     const handleDelete = async () => {
 
@@ -50,11 +52,11 @@ const CardProducts = ({producto, setUpdateList, updateList, handleCloseModal, ha
     return (
         <div className="col-4 mb-3">
             <Card>
-                <Card.Title className="text-center">{producto.name}</Card.Title>
+                <Card.Title className="text-center">{producto.nombre}</Card.Title>
                 <img src={producto.image} alt={producto.name} className="card-img-top image-card" />
                 <Card.Body>
                     <ListGroup className="mb-2">                       
-                        <ListGroupItem><strong>MARCA: </strong>{producto.trademark}</ListGroupItem>                        
+                        <ListGroupItem><strong>MARCA mor: </strong>{producto.nombre}</ListGroupItem>                        
                         <ListGroupItem><strong>MODELO: </strong>{producto.model}</ListGroupItem>
                         <ListGroupItem><strong>CARASTERISTICAS: </strong>{producto.reference}</ListGroupItem>
                         <ListGroupItem><strong>PRECIO: </strong>{producto.price}</ListGroupItem>
