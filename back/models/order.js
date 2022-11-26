@@ -21,9 +21,8 @@ const orderSchema = mongoose.Schema({
     },
     user:
     {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         required: true,
-        ref: "auth"
     },
     items: [{
         nombre: {
@@ -36,7 +35,7 @@ const orderSchema = mongoose.Schema({
         },
         imagen: {
             type: String,
-            required: true
+            required: false
         },
         precio: {
             type: Number,

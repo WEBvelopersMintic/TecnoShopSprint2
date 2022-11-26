@@ -12,7 +12,8 @@ exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
         precioImpuesto,
         precioEnvio,
         precioTotal,
-        pagoInfo
+        pagoInfo,
+        user
     } = req.body;
 
     const order= await Order.create({
@@ -24,7 +25,7 @@ exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
         precioTotal,
         pagoInfo,
         fechaPago: Date.now(),
-        user: req.user._id
+        user
     })
 
     res.status(201).json({
@@ -35,7 +36,7 @@ exports.newOrder= catchAsyncErrors (async (req, res, next)=>{
 
 //Ver una orden
 exports.getOneOrder= catchAsyncErrors(async(req, res, next)=>{
-    const order= await Order.findById(req.params.id).populate("user", "nombre email") //restriccion de usuario
+    const order= await Order.findById(req.params.id) //restriccion de usuario
 
     if(!order){
         return next(new ErrorHandler("No encontramos una orden con ese Id",404))

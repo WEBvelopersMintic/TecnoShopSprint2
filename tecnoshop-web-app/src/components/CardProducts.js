@@ -53,10 +53,10 @@ const CardProducts = ({producto, setUpdateList, updateList, handleCloseModal, ha
         <div className="col-4 mb-3">
             <Card>
                 <Card.Title className="text-center">{producto.nombre}</Card.Title>
-                <img src={producto.image} alt={producto.name} className="card-img-top image-card" />
+                <img src={producto.imagen.url} alt={producto.name} className="card-img-top image-card" />
                 <Card.Body>
                     <ListGroup className="mb-2">                       
-                        <ListGroupItem><strong>MARCA mor: </strong>{producto.nombre}</ListGroupItem>                        
+                        <ListGroupItem><strong>MARCA: </strong>{producto.name}</ListGroupItem>                        
                         <ListGroupItem><strong>MODELO: </strong>{producto.model}</ListGroupItem>
                         <ListGroupItem><strong>CARASTERISTICAS: </strong>{producto.reference}</ListGroupItem>
                         <ListGroupItem><strong>PRECIO: </strong>{producto.price}</ListGroupItem>

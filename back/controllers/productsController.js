@@ -108,32 +108,33 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
 //Crear nuevo producto /api/productos
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
-    let imagen=[]
-    if(typeof req.body.imagen==="string"){
-        imagen.push(req.body.imagen)
-    }else{
-        imagen=req.body.imagen
-    }
+    
+    const result = cloudinary.v2.uploader.upload(req.body.imagen,
+    { 
+        public_id: req.body.name,
+        folder:"productos", 
+        crop:"scale", 
+        width:300
+    });
 
-    // let imagenLink=[]
+    result.then(result => {
+        
+        req.body.imagen= {
+            public_id: result.public_id,
+            url: result.secure_url
+        }
+        console.log("req.body.imagen--->", req.body.imagen);
+        const product = producto.create(req.body);
 
-    // for (let i=0; i<imagen.length;i++){
-    //     const result = await cloudinary.v2.uploader.upload(imagen[i],{
-    //         folder:"products"
-    //     })
-    //     imagenLink.push({
-    //         public_id:result.public_id,
-    //         url: result.secure_url
-    //     })
-    // }
+        product.then(data => {
+            console.log("product data--->", data);
+            res.status(201).json({
+                success: true,
+                data
+            })
+        })
 
-    // req.body.imagen=imagenLink
-   // req.body.user = req.user.id;
-    const product = await producto.create(req.body);
-    res.status(201).json({
-        success: true,
-        product
-    })
+    });
 })
 
 

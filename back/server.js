@@ -10,11 +10,15 @@ if(process.env.NODE_ENV==="PRODUCTION") require('dotenv').config({path:'back/con
 connectDatabase();
 
 //Configurar Cloudinary
-cloudinary.config({
-    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
-    api_key:process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-})
+cloudinary.config({ 
+    cloud_name: 'tecnoshp', 
+    api_key: '958477362898645', 
+    api_secret: '6WrKTRT446ox6pBeSQwbFpbGOJ4' 
+  });
+
+
+
+console.log(cloudinary.config());
 
 //Llamemos al server
 const server=app.listen(process.env.PORT, () => {

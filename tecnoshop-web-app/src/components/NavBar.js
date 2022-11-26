@@ -9,9 +9,9 @@ const NavBar = () => {
                 <Navbar.Brand href="/"> TecnoShop </Navbar.Brand>
                 
                 <Nav className="me-auto">
-                    <Link to="/product" className="nav-link"> Administrar Productos </Link>
+                    <Link to="/admin/product" className="nav-link"> Administrar Productos </Link>
                     <Link to="/create-product" className="nav-link"> Ingresar Productos </Link>
-                    <Link to="/" className="nav-link"> Lissta de Productos </Link>  
+                    <Link to="/" className="nav-link"> Lista de Productos </Link>  
                     <Link to="/carrito" className="nav-link"> Carrito </Link>    
                     <Link to="/lista-ventas" className="nav-link"> Lista de ventas </Link>           
                 </Nav>

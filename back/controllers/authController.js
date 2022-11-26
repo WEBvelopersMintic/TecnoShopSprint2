@@ -8,30 +8,40 @@ const cloudinary= require("cloudinary")
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario= catchAsyncErrors(async (req, res, next) =>{
-    const {nombre, email, password} = req.body;
+    const {nombre, email, password, avatar} = req.body;
 
-    const result= await cloudinary.v2.uploader.upload(req.body.avatar, {
-        folder:"avatars",
-        width:240,
-        crop:"scale"
-    })
+    const result = cloudinary.v2.uploader.upload(avatar,
+    { 
+        public_id: "olympic_flag",
+        folder:"avatars", 
+        crop:"scale", 
+        width: 300
+    });
 
-    const user = await User.create({
-        nombre,
-        email,
-        password,
-        avatar:{
-            public_id:result.public_id,
-            url:result.secure_url
-        }
-    })
-    tokenEnviado(user,201,res)
+    result.then(result => {
+        const user = User.create({
+            nombre,
+            email,
+            password,
+            avatar:{
+                public_id: result.public_id,
+                url: result.secure_url
+            }
+        })
+
+        user.then(data => {
+            tokenEnviado(data,201,res)
+        })
+
+    });
+
 })
 
 
 //Iniciar Sesion - Login
 exports.loginUser = catchAsyncErrors(async(req, res, next)=>{
     const { email, password} =  req.body;
+    console.log("req.body--->", req.body);
 
     //revisar si los campos estan completos
     if (!email || !password){

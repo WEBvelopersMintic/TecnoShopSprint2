@@ -9,15 +9,15 @@ const { newOrder,
 } = require("../controllers/orderController");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
-router.route("/order/new").post(isAuthenticatedUser, newOrder)
-router.route("/order/:id").get(isAuthenticatedUser, getOneOrder)
-router.route("/orders/me").get(isAuthenticatedUser, myOrders)
+router.route("/order/new").post(newOrder)
+router.route("/order/:id").get(getOneOrder)
+router.route("/orders/me").get(myOrders)
 
 
 //rutas de admin
-router.route("/admin/orders").get(isAuthenticatedUser, authorizeRoles("admin"), allOrders)
-router.route("/admin/order/:id").put(isAuthenticatedUser, authorizeRoles("admin"), updateOrder)
-router.route("/admin/order/:id").delete(isAuthenticatedUser, authorizeRoles("admin"), deleteOrder)
+router.route("/admin/orders").get(allOrders)
+router.route("/admin/order/:id").put(updateOrder)
+router.route("/admin/order/:id").delete(deleteOrder)
 
 
 module.exports=router;

@@ -1,42 +1,80 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { newProduct, clearErrors } from '../actions/productActions'
 import { Container, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { NEW_PRODUCT_RESET } from '../constants/productConstants'
 
 const NewProduct = () => {
 
-    //const history = useHistory();
-
+    const dispatch = useDispatch();
+    const navigate= useNavigate()
+    const [imagen, setImagen]= useState()
+    const [vendedor, setVendedor] = useState('');
     const [data, setData] = useState({ name: "", model: "", trademark: "",  price: "", image: "", reference: ""})
+    const { loading, error, success } = useSelector(state => state.newProduct);
 
-    const handleChange = ({ target }) => {
-        setData({
-            ...data,
-            [target.name]: target.value
-        })
-    }
+    useEffect(() => {
 
-    const URL = "http://localhost:3000/productos"
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const response = await axios.post(URL, data);
-        if (response.status === 201) {
-            Swal.fire(
-                'Guardado!',
-                `El registro ${response.data.name} ha sido guardado exitosamente!`,
-                'success'
-            )
-
-           // history.push('/')
-
-        } else {
+        if (error) {
             Swal.fire(
                 'Error!',
                 'Hubo un problema al crear el registro!',
                 'error'
             )
+            dispatch(clearErrors())
         }
+
+        if (success) {
+            Swal.fire(
+                'Guardado!',
+                `El registro ${data.name} ha sido guardado exitosamente!`,
+                'success'
+            )
+            navigate('/dashboard');
+            dispatch({ type: NEW_PRODUCT_RESET })
+        }
+
+    }, [dispatch, alert, error, success])
+
+    const handleChange = ({ target }) => {
+       
+        if (target.name === "image"){
+            const reader = new FileReader();
+
+            reader.onload=()=>{
+                if (reader.readyState ===2){
+                    setImagen(reader.result)
+                }
+            }
+            reader.readAsDataURL(target.files[0])
+        }
+        else{
+            setData({
+                ...data,
+                [target.name]: target.value
+            })
+        }
+    }
+
+    const URL = "http://localhost:4000/productos"
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const productNew = {
+            name: data.name,
+            model: data.model,
+            reference: data.reference,
+            trademark: data.trademark,
+            price: data.price,
+            imagen: imagen,
+            vendedor, vendedor
+        }
+
+        dispatch(newProduct(productNew))
     }
 
     return (
@@ -94,12 +132,12 @@ const NewProduct = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Ruta Imagen</Form.Label>
+                    <Form.Label>Imagen</Form.Label>
                     <Form.Control
-                        type="text"
+                        type="file"
                         name="image"
-                        placeholder="URL de la imagen"
-                        value={data.image}
+                        placeholder="Subir imagen"
+                        accept="images/*"
                         onChange={handleChange}
                         required
                     />
@@ -112,6 +150,17 @@ const NewProduct = () => {
                         placeholder="Carasteristicas"
                         value={data.reference}
                         onChange={handleChange}
+                        required
+                    />
+                </Form.Group>        
+                <Form.Group className="mb-3">
+                    <Form.Label>Vendedor</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="vendedor"
+                        placeholder="vendedor"
+                        value={vendedor}
+                        onChange={(e) => setVendedor(e.target.value)}
                         required
                     />
                 </Form.Group>        

@@ -1,28 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams} from "react-router-dom"
+import { addItemToCart } from '../actions/cartActions'
 import { getProducts } from '../actions/productActions';
 import ClientCardProducts from './ClientCardProducts';
 import { Container, Form, Modal, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 const ClientListProducts = () => {
+    const params= useParams();
 
     const dispatch = useDispatch();
     const { loading, products, error, productsCount } = useSelector(state => state.products);
-    console.log("products aaaaaa--->", products);
-
-    const URL = "http://localhost:4000/api/productos"
-
-    const getData = async () => {
-        const response = axios.get(URL);
-        return response;
-    }
 
     const [list, setList] = useState([]);
     const [updateList, setUpdateList] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const [dataModal, setDataModal] = useState({ name: "", model: "", trademark: "",  price: "", image: "", cont: ""})
+    const [dataModal, setDataModal] = useState({ id:"", name: "", model: "", trademark: "",  price: "", image: "", cont: ""})
 
     const handleCloseModal = () => { setShowModal(false) }
     const handleOpenModal = () => { setShowModal(true) }
@@ -34,26 +29,19 @@ const ClientListProducts = () => {
         })
     }
 
-    const URLI = "http://localhost:3000/items"
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post(URLI, dataModal)
-        if (response.status === 201) {
-            Swal.fire(
-                'Guardado!',
-                `El registro ${response.data.name} ha sido guardado exitosamente!`,
-                'success'
-            )
-            handleCloseModal();
-            setUpdateList(!updateList)
-        } else {
-            Swal.fire(
-                'Error!',
-                'Hubo un problema al crear el registro!',
-                'error'
-            )
-        }
+
+        console.log("dataModal--->", dataModal)
+        dispatch(addItemToCart(dataModal));
+        Swal.fire(
+            'Guardado!',
+            `Producto agregado al carro!`,
+            'success'
+        )
+        handleCloseModal();
+        setUpdateList(!updateList)
+        
     }
 
     useEffect(() => {
@@ -136,9 +124,9 @@ const ClientListProducts = () => {
                             <Form.Label>Cantidad</Form.Label>
                             <Form.Control
                                 type="number"
-                                name="cont"
+                                name="quantity"
                                 placeholder="Cantidad"
-                                value={dataModal.cont}
+                                value={dataModal.quantity}
                                 onChange={handleChangeModal}
                                 required
                             />

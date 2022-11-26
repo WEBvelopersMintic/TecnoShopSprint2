@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts } from '../actions/productActions';
 import CardProducts from './CardProducts';
 import { Container, Form, Modal, Row } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
 const ListProducts = () => {
 
-    const URL = "http://localhost:3004/productos"
-    
-    const getData = async () => {
-        const response = axios.get(URL);
-        return response;
-    }
-
+    const dispatch = useDispatch();
+    const { loading, products, error, productsCount } = useSelector(state => state.products);
     const [list, setList] = useState([]);
     const [updateList, setUpdateList] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -49,11 +46,12 @@ const ListProducts = () => {
     }
 
     useEffect(() => {
-        //UseEffect' Body
-        getData().then((response) => {
-            setList(response.data);
-        })
-    }, [updateList])
+        if (error) {
+            return alert.error(error)
+        }
+
+        dispatch(getProducts());
+    }, [dispatch, error])
 
 
     return (
@@ -61,10 +59,10 @@ const ListProducts = () => {
             <h1 className="text-center">Listado de Productos</h1>
             <Row>
             {
-                list.map((producto, index) => (
+                products.map((product, index) => (
                     <CardProducts 
                         key={index}
-                        producto={producto}
+                        producto={product}
                         setUpdateList={setUpdateList}
                         updateList={updateList}
                         handleCloseModal= {handleCloseModal}
