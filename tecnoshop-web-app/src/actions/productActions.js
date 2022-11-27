@@ -35,7 +35,7 @@ export const getProducts = () => async (dispatch) => {
     try {
         dispatch({ type: ALL_PRODUCTS_REQUEST })
 
-        let link = `/api/productos`
+        let link = `http://localhost:4000/api/productos`
 
         const { data } = await axios.get(link)
 
@@ -56,7 +56,7 @@ export const getAdminProducts = () => async (dispatch) => {
     try {
         dispatch({ type: ADMIN_PRODUCTS_REQUEST })
 
-        const { data } = await axios.get('/api/admin/productos')
+        const { data } = await axios.get('http://localhost:4000/api/admin/productos')
 
         dispatch({
             type: ADMIN_PRODUCTS_SUCCESS,
@@ -81,7 +81,7 @@ export const newProduct = ( productData ) => async (dispatch)=>{
             }
         }
 
-        const {data} = await axios.post('/api/producto/nuevo', productData, config)
+        const {data} = await axios.post('http://localhost:4000/api/producto/nuevo', productData, config)
 
         dispatch({
             type: NEW_PRODUCT_SUCCESS,
@@ -100,7 +100,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`/api/producto/${id}`)
+        const { data } = await axios.get(`http://localhost:4000/api/producto/${id}`)
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -118,7 +118,7 @@ export const getProductDetails = (id) => async (dispatch) => {
 export const deleteProduct = (id) => async(dispatch)=>{
     try{
         dispatch ({type: DELETE_PRODUCT_REQUEST})
-        const {data} = await axios.delete(`/api/producto/${id}`)
+        const {data} = await axios.delete(`http://localhost:4000/api/producto/${id}`)
 
         dispatch({
             type: DELETE_PRODUCT_SUCCESS,
@@ -143,7 +143,7 @@ export const updateProduct = (id, productData) => async (dispatch) =>{
                 "Content-Type": "application/json"
             }
         }
-        const {data} = await axios.put(`/api/producto/${id}`, productData, config)
+        const {data} = await axios.put(`http://localhost:4000/api/producto/${id}`, productData, config)
 
         dispatch({
             type: UPDATE_PRODUCT_SUCCESS,
@@ -169,7 +169,7 @@ export const newReview = (reviewData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put(`/api/review`, reviewData, config)
+        const { data } = await axios.put(`http://localhost:4000/api/review`, reviewData, config)
 
         dispatch({
             type: NEW_REVIEW_SUCCESS,
@@ -189,7 +189,7 @@ export const getProductReviews = (id) => async (dispatch) => {
 
         dispatch({ type: GET_REVIEWS_REQUEST })
 
-        const { data } = await axios.get(`/api/reviews?id=${id}`)
+        const { data } = await axios.get(`http://localhost:4000/api/reviews?id=${id}`)
 
         dispatch({
             type: GET_REVIEWS_SUCCESS,
@@ -211,7 +211,7 @@ export const deleteReview = (id, productId) => async (dispatch) => {
 
         dispatch({ type: DELETE_REVIEW_REQUEST })
 
-        const { data } = await axios.delete(`/api/reviews?idProducto=${productId}&idReview=${id}`)
+        const { data } = await axios.delete(`http://localhost:4000/api/reviews?idProducto=${productId}&idReview=${id}`)
 
         dispatch({
             type: DELETE_REVIEW_SUCCESS,

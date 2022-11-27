@@ -32,7 +32,7 @@ export const createOrder = (order) => async (dispatch)=>{
             }
         }
 
-        const {data} = await axios.post("/api/order/new", order, config)
+        const {data} = await axios.post("http://localhost:4000/api/order/new", order, config)
 
         dispatch({
             type: CREATE_ORDER_SUCCESS,
@@ -52,7 +52,7 @@ export const myOrders = () => async (dispatch) => {
 
         dispatch({ type: MY_ORDERS_REQUEST });
 
-        const { data } = await axios.get('/api/orders/me')
+        const { data } = await axios.get('http://localhost:4000/api/orders/me')
 
         dispatch({
             type: MY_ORDERS_SUCCESS,
@@ -94,7 +94,7 @@ export const allOrders = () => async (dispatch) => {
 
         dispatch({ type: ALL_ORDERS_REQUEST });
 
-        const { data } = await axios.get(`/api/admin/orders`)
+        const { data } = await axios.get(`http://localhost:4000/api/admin/orders`)
 
         dispatch({
             type: ALL_ORDERS_SUCCESS,
@@ -121,7 +121,7 @@ export const updateOrder = (id, orderData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put(`/api/admin/order/${id}`, orderData, config)
+        const { data } = await axios.put(`http://localhost:4000/api/admin/order/${id}`, orderData, config)
 
         dispatch({
             type: UPDATE_ORDER_SUCCESS,
@@ -142,7 +142,7 @@ export const deleteOrder = (id) => async (dispatch) => {
 
         dispatch({ type: DELETE_ORDER_REQUEST })
 
-        const { data } = await axios.delete(`/api/admin/order/${id}`)
+        const { data } = await axios.delete(`http://localhost:4000/api/admin/order/${id}`)
 
         dispatch({
             type: DELETE_ORDER_SUCCESS,

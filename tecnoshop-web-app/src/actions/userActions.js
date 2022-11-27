@@ -49,7 +49,7 @@ export const login = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const {data} = await axios.post('/api/login', {email, password}, config)
+        const {data} = await axios.post('http://localhost:4000/api/login', {email, password}, config)
 
         dispatch({
             type:LOGIN_SUCCESS,
@@ -74,7 +74,7 @@ export const register = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const {data} = await axios.post('/api/usuario/registro', userData, config)
+        const {data} = await axios.post('http://localhost:4000/api/usuario/registro', userData, config)
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -93,7 +93,7 @@ export const register = (userData) => async (dispatch) => {
 export const loadUser=()=> async(dispatch) =>{
     try{
         dispatch({type: LOAD_USER_REQUEST})
-        const {data} = await axios.get("/api/yo")
+        const {data} = await axios.get("http://localhost:4000/api/yo")
         dispatch({
             type: LOAD_USER_SUCCESS,
             payload: data.user
@@ -117,7 +117,7 @@ export const updateProfile = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const {data} = await axios.put('/api/yo/updateProfile', userData, config)
+        const {data} = await axios.put('http://localhost:4000/api/yo/updateProfile', userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -135,7 +135,7 @@ export const updateProfile = (userData) => async (dispatch) => {
 //logout User
 export const logout = () => async (dispatch)=>{
     try{
-        await axios.get("/api/logout")
+        await axios.get("http://localhost:4000/api/logout")
         dispatch({
             type: LOGOUT_SUCCESS,
         })
@@ -157,7 +157,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const {data} = await axios.put('/api/yo/updatePassword', passwords, config)
+        const {data} = await axios.put('http://localhost:4000/api/yo/updatePassword', passwords, config)
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
@@ -183,7 +183,7 @@ export const forgotPassword = (email) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const {data} = await axios.post('/api/forgotPassword', email, config)
+        const {data} = await axios.post('http://localhost:4000/api/forgotPassword', email, config)
 
         dispatch({
             type: FORGOT_PASSWORD_SUCCESS,
@@ -208,7 +208,7 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const {data} = await axios.post(`/api/resetPassword/${token}`, passwords, config)
+        const {data} = await axios.post(`http://localhost:4000/api/resetPassword/${token}`, passwords, config)
 
         dispatch({
             type: NEW_PASSWORD_SUCCESS,
@@ -229,7 +229,7 @@ export const allUsers = () => async (dispatch) => {
 
         dispatch({ type: ALL_USERS_REQUEST })
 
-        const { data } = await axios.get('/api/admin/allUsers')
+        const { data } = await axios.get('http://localhost:4000/api/admin/allUsers')
 
         dispatch({
             type: ALL_USERS_SUCCESS,
@@ -249,7 +249,7 @@ export const deleteUser = (id) => async (dispatch) => {
 
         dispatch({ type: DELETE_USER_REQUEST })
 
-        const { data } = await axios.delete(`/api/admin/deleteUser/${id}`)
+        const { data } = await axios.delete(`http://localhost:4000/api/admin/deleteUser/${id}`)
 
         dispatch({
             type: DELETE_USER_SUCCESS,
@@ -271,7 +271,7 @@ export const getUserDetails = (id) => async (dispatch) => {
         dispatch({ type: USER_DETAILS_REQUEST })
 
 
-        const { data } = await axios.get(`/api/admin/user/${id}`)
+        const { data } = await axios.get(`http://localhost:4000/api/admin/user/${id}`)
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -298,7 +298,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put(`/api/admin/updateUser/${id}`, userData, config)
+        const { data } = await axios.put(`http://localhost:4000/api/admin/updateUser/${id}`, userData, config)
 
         dispatch({
             type: UPDATE_USER_SUCCESS,
